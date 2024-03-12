@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.MainPage">
+
+    <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+        
+
+        <Entry
+        x:Name="ValueEntry"
+        Placeholder="Digite o valor da gorjeta"/>
+        
+
+        <Label
+                Text="Gorjeta"
+                FontSize="Small"/>
+
+        <Label
+                x:Name="LabelTipValue"
+                Text="0.00"
+                FontSize="Micro"/>
+
+        <Label
+                Text="Total"
+                FontSize="Small"/>
+
+        <Label
+                x:Name="LabelTotalValue"
+                Text="0.00"
+                FontSize="Micro"/>
+
+        <Label
+                Text="% da Gorjeta"
+                FontSize="Small"/>
+
+        <Label
+                x:Name="LabelTotalPercent"
+                Text="0.00"
+                FontSize="Micro"/>
+        
+
+        <Slider 
+            x:Name="SliderTipPercent"
+            Minimum="0"
+            Maximum="100" 
+            ValueChanged="SliderTipPercent_ValueChanged"/>
+        
+
+            <Button
+                 x:Name="FifteenBtn"
+                 Text="15%" 
+                 SemanticProperties.Hint="Counts the number of times you click"
+                 HorizontalOptions="Fill"
+                 Clicked="FifteenBtn_Clicked"/>
+
+            <Button
+                x:Name="TwentyBtn"
+                Text="20%" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Fill"
+                Clicked="TwentyBtn_Clicked"/>
+
+            <Button
+                x:Name="DownBtn"
+                Text="Arredondar para valor menor" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Fill"
+                Clicked="DownBtn_Clicked"/>
+
+            <Button 
+                x:Name="UpBtn"
+                Text="Arredondar para valor maior" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                HorizontalOptions="Fill"
+                Clicked="UpBtn_Clicked"/> 
+    </VerticalStackLayout>
+
+</ContentPage>
