@@ -60,7 +60,7 @@
 
         private void SliderTipPercent_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            LabelTotalPercent.Text = Math.Round(SliderTipPercent.Value).ToString();
+            LabelPercentageValue.Text = Math.Round(SliderTipPercent.Value).ToString();
         }
     }
 

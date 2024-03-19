@@ -3,78 +3,87 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipCalculator.MainPage">
 
-    <VerticalStackLayout
+    <ScrollView>
+        <VerticalStackLayout
             Padding="30,0"
-            Spacing="25">
-        
+            Spacing="10">
+            <Label  Text='Total da compra' />
 
-        <Entry
-        x:Name="ValueEntry"
-        Placeholder="Digite o valor da gorjeta"/>
-        
+            <Entry x:Name="ValueEntry"  Placeholder="Digite o valor do pedido" Keyboard="Numeric" />
 
-        <Label
-                Text="Gorjeta"
-                FontSize="Small"/>
+            <HorizontalStackLayout>
+                <Label  Text="Tip" FontSize="Small" />
+                <StackLayout Padding="50,0,0,0">
+                    <Label Text="0.00"  FontSize="Micro" x:Name="LabelTipValue" />
+                </StackLayout>
+            </HorizontalStackLayout>
 
-        <Label
-                x:Name="LabelTipValue"
-                Text="0.00"
-                FontSize="Micro"/>
+            <HorizontalStackLayout>
+                <Label
+                    Text="Total"  
+                    FontSize="Small"/>
 
-        <Label
-                Text="Total"
-                FontSize="Small"/>
+                <StackLayout Padding="50,0,0,0">
+                    <Label 
+                        Text="0.00"
+                        FontSize="Micro"
+                        x:Name="LabelTotalValue"/>
+                </StackLayout>
+            </HorizontalStackLayout>
 
-        <Label
-                x:Name="LabelTotalValue"
-                Text="0.00"
-                FontSize="Micro"/>
+            <HorizontalStackLayout>
+                <Label
+                    Text="Tip.Percentage"
+                    FontSize="Small"/>
+                <StackLayout
+                    Padding="50,0,0,0">
+                    <Label
+                        Text="0.00"
+                        FontSize="Micro"
+                        x:Name="LabelPercentageValue"/>
+                </StackLayout>
+            </HorizontalStackLayout>
 
-        <Label
-                Text="% da Gorjeta"
-                FontSize="Small"/>
+            <Slider Maximum="100"
+                    Minimum="0"
+                    x:Name="SliderTipPercent"
+                    ValueChanged="SliderTipPercent_ValueChanged"  />
 
-        <Label
-                x:Name="LabelTotalPercent"
-                Text="0.00"
-                FontSize="Micro"/>
-        
+            <HorizontalStackLayout Spacing="100">
+                <Button
+                     WidthRequest="200"
+                     x:Name="Btn15Percent"
+                     Text="15%"      
+                    HorizontalOptions="Fill"
+                    Clicked="Btn15Percent_Clicked"  />
 
-        <Slider 
-            x:Name="SliderTipPercent"
-            Minimum="0"
-            Maximum="100" 
-            ValueChanged="SliderTipPercent_ValueChanged"/>
-        
+                <Button
+                     WidthRequest="200"
+                     x:Name="Btn20Percent"
+                     Text="20%" 
+                     HorizontalOptions="Fill" 
+                     Clicked="Btn20Percent_Clicked"  
+                />
+            </HorizontalStackLayout>
 
-            <Button
-                 x:Name="FifteenBtn"
-                 Text="15%" 
-                 SemanticProperties.Hint="Counts the number of times you click"
-                 HorizontalOptions="Fill"
-                 Clicked="FifteenBtn_Clicked"/>
+            <HorizontalStackLayout Spacing="100">
+                <Button
+                    WidthRequest="200"
+                    x:Name="ButtonRoundDown"
+                    Text="Arrendondar para baixo" 
+                    HorizontalOptions="Fill" 
+                    Clicked="ButtonRoundDown_Clicked"   />
 
-            <Button
-                x:Name="TwentyBtn"
-                Text="20%" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill"
-                Clicked="TwentyBtn_Clicked"/>
+                <Button
+                    WidthRequest="200"
+                    x:Name="ButtonRoundUp"
+                    Text="Arrendondar para cima" 
+                    HorizontalOptions="Fill"
+                    Clicked="ButtonRoundUp_Clicked"/>
 
-            <Button
-                x:Name="DownBtn"
-                Text="Arredondar para valor menor" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill"
-                Clicked="DownBtn_Clicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
 
-            <Button 
-                x:Name="UpBtn"
-                Text="Arredondar para valor maior" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill"
-                Clicked="UpBtn_Clicked"/> 
-    </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
