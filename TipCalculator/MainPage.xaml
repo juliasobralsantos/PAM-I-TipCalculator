@@ -4,86 +4,107 @@
              x:Class="TipCalculator.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="10">
-            <Label  Text='Total da compra' />
+
+        <Grid RowDefinitions= "auto, auto, auto, auto, auto, auto, auto"
+         ColumnDefinitions= "*,*">
+       
+        
+        <Label  Text='Total da compra' 
+                    Grid.Row ="0"
+                   Grid.Column="0"/>
 
             <Entry x:Name="ValueEntry"  Placeholder="Digite o valor do pedido" Keyboard="Numeric" />
 
-            <HorizontalStackLayout>
-                <Label  Text="Tip" FontSize="Small" />
-                <StackLayout Padding="50,0,0,0">
-                    <Label Text="0.00"  FontSize="Micro" x:Name="LabelTipValue" />
-                </StackLayout>
-            </HorizontalStackLayout>
+       
 
-            <HorizontalStackLayout>
-                <Label
-                    Text="Total"  
-                    FontSize="Small"/>
 
-                <StackLayout Padding="50,0,0,0">
-                    <Label 
+        <Label  Text="Tip: " FontSize="Small" 
+                Grid.Row ="1"
+                Grid.Column="0"/>
+        
+        <Label Text="0.00"  FontSize="Micro" x:Name="LabelTipValue"
+                 Grid.Row ="1"
+                 Grid.Column="1"/>
+
+        
+        
+        <Label
+                    Text="Total: "  
+                    FontSize="Small"
+                    Grid.Row ="2"
+                    Grid.Column="0"/>
+        
+        <Label 
                         Text="0.00"
                         FontSize="Micro"
-                        x:Name="LabelTotalValue"/>
-                </StackLayout>
-            </HorizontalStackLayout>
+                        x:Name="LabelTotalValue"
+                        Grid.Row ="2"
+                        Grid.Column="1"/>
 
-            <HorizontalStackLayout>
-                <Label
+
+
+
+            <Label
                     Text="Tip.Percentage"
-                    FontSize="Small"/>
-                <StackLayout
-                    Padding="50,0,0,0">
-                    <Label
+                    FontSize="Small"
+                    Grid.Row ="3"
+                    Grid.Column="0"/>
+                            
+            <Label
                         Text="0.00"
                         FontSize="Micro"
-                        x:Name="LabelPercentageValue"/>
-                </StackLayout>
-            </HorizontalStackLayout>
+                        x:Name="LabelPercentageValue"
+                        Grid.Row ="3"
+                        Grid.Column="1"/>
+
+            
 
             <Slider Maximum="100"
                     Minimum="0"
                     x:Name="SliderTipPercent"
-                    ValueChanged="SliderTipPercent_ValueChanged"  />
+                    ValueChanged="SliderTipPercent_ValueChanged"  
+                    Grid.Row ="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
 
-            <HorizontalStackLayout Spacing="100">
+            
                 <Button
                      WidthRequest="200"
                      x:Name="Btn15Percent"
                      Text="15%"      
                     HorizontalOptions="Fill"
-                    Clicked="FifteenBtn_Clicked"  />
+                    Clicked="FifteenBtn_Clicked"
+                    Grid.Row ="5"
+                    Grid.Column="0"/>
 
                 <Button
                      WidthRequest="200"
                      x:Name="Btn20Percent"
                      Text="20%" 
                      HorizontalOptions="Fill" 
-                     Clicked="TwentyBtn_Clicked"  
+                     Clicked="TwentyBtn_Clicked"
+                     Grid.Row ="5"
+                     Grid.Column="1"
                 />
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout Spacing="100">
+            
                 <Button
                     WidthRequest="200"
                     x:Name="ButtonRoundDown"
                     Text="Arrendondar para baixo" 
                     HorizontalOptions="Fill" 
-                    Clicked="ButtonRoundDown_Clicked"   />
+                    Clicked="ButtonRoundDown_Clicked"  
+                    Grid.Row ="6"
+                    Grid.Column="0"/>
 
                 <Button
                     WidthRequest="200"
                     x:Name="ButtonRoundUp"
                     Text="Arrendondar para cima" 
                     HorizontalOptions="Fill"
-                    Clicked="ButtonRoundUp_Clicked"/>
-
-            </HorizontalStackLayout>
-        </VerticalStackLayout>
-
+                    Clicked="ButtonRoundUp_Clicked"
+                   Grid.Row ="6"
+                   Grid.Column="1"/>
+        </Grid>
     </ScrollView>
 
 </ContentPage>
