@@ -55,14 +55,14 @@
                      x:Name="Btn15Percent"
                      Text="15%"      
                     HorizontalOptions="Fill"
-                    Clicked="Btn15Percent_Clicked"  />
+                    Clicked="FifteenBtn_Clicked"  />
 
                 <Button
                      WidthRequest="200"
                      x:Name="Btn20Percent"
                      Text="20%" 
                      HorizontalOptions="Fill" 
-                     Clicked="Btn20Percent_Clicked"  
+                     Clicked="TwentyBtn_Clicked"  
                 />
             </HorizontalStackLayout>
 

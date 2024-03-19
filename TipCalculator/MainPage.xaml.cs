@@ -19,7 +19,7 @@
             SliderTipPercent.Value = 20;
         }
 
-        private void DownBtn_Clicked(object sender, EventArgs e)
+        private void ButtonRoundDown_Clicked(object sender, EventArgs e)
         {
             //Calcular a gorgeta, arredondando para baixo
            double result = CalculateTip();
@@ -31,7 +31,7 @@
             LabelTotalValue.Text = TotalValue.ToString();
         }
 
-        private void UpBtn_Clicked(object sender, EventArgs e)
+        private void ButtonRoundUp_Clicked(object sender, EventArgs e)
         {
             //Calcular a gorgeta, arredondando para cima 
             double result = CalculateTip();
